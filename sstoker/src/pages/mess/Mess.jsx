@@ -1,5 +1,5 @@
 import React from 'react'
-import "./hostel.css"
+import "./mess.css"
 import Navbar from "../../components/navbar/Navbar"
 import Header from "../../components/header/Header"
 import MailList from "../../components/mailList/MailList"
@@ -8,27 +8,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import {useState} from "react";
 
-const Hostel = () =>{
+const Mess = () =>{
 
     const [slideNumber, setSlideNumber] = useState(0);
     const [open, setOpen ]= useState(false);
     const photos = [
         {
-            src: "SVG\pexels-photo-4907238.jpeg"
+            src: "SVG\messfoodd-1.jpg"
         },
         {
-            src: "SVG\pexels-photo-11063553.jpeg"
+            src: "SVG\mess.jpg"
         },
         {
-            src: "SVG\Hostel-infra.jpg"
+            src: "SVG\dining room -1.jpg"
         },
         {
-            src: "SVG\hostelrules01.jpg"
+            src: "SVG\images.jpg"
         },
     ];
 
     const handleOpen = (i)=>{
-        setSliderNumber(i);
+        setSlideNumber(i);
         setOpen(true)
     };
 
@@ -46,7 +46,7 @@ const Hostel = () =>{
         <div>
             <Navbar/>
             <Header type = "list"/>
-            <div className="hostelContainer">
+            <div className="messContainer">
                 { open && <div className="slider">
                     <FontAwesomeIcon icon={faCircleXmark} className="close" onClick={()=>setOpen(false)}/>
                     <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" onClick={()=>handleMove("l")} />
@@ -55,30 +55,30 @@ const Hostel = () =>{
                     </div>
                     <FontAwesomeIcon icon={faCircleArrowRight }className="arrow" onClick={()=>handleMove("r")}/>
                     </div>}
-                <div className="hostelWrapper">
+                <div className="messWrapper">
                     <button className="bookNow">Reserve or Book Now!</button>
-                    <h1 className="hostelTitle">grand Hostel</h1>
-                    <div className="hostelAddress">
+                    <h1 className="messTitle">grand Hostel</h1>
+                    <div className="messAddress">
                         <FontAwesomeIcon icon={faLocationDot}/> 
                         <span>Gurdwara Chowk, Akurdi</span>
                     </div>
-                    <span className="hostelDistance">
+                    <span className="messDistance">
                         Excellent location - 500m from center
                     </span>
-                    <span className="hostelPriceHighlight">
+                    <span className="messPriceHighlight">
                         Book a stay in next 15 day at 14000 and get 15% off
                     </span>
-                    <div className="hostelImages">
+                    <div className="messImages">
                         {photos.map(photo=>(
-                            <div className="hostelImgWrapper">
-                                <img onClick={()=>handleOpen(i)} src={photo.src} alt="" className="hostelImg"/>
+                            <div className="messImgWrapper">
+                                <img onClick={()=>handleOpen(i)} src={photo.src} alt="" className="messImg"/>
                             </div>
                         ))}
                     </div>
-                    <div className="hostelDetails">
-                        <div className="hostelDetailsTexts">
-                            <h1 className="hostelTitle">Stay in the heart of Akurdi</h1>
-                            <p className="hostelDesc">
+                    <div className="messDetails">
+                        <div className="messDetailsTexts">
+                            <h1 className="messTitle">Stay in the heart of Akurdi</h1>
+                            <p className="messDesc">
                                 Located a 5-minute walk from Akurdi Railway station. has accomodation
                                 with air conditioning and Wifi. The units come with hardwood floors and 
                                 fully equipped furniture. Popular points of interest near the apartment
@@ -86,7 +86,7 @@ const Hostel = () =>{
                                 from this place. and the property offer great service and help.
                             </p>
                         </div>
-                        <div className="hostelDetailsPrice">
+                        <div className="messDetailsPrice">
                             <h1>Perfect for a student stay!</h1>
                             <span>
                                 Located in the real heart of Akurdi, this property has an Excellent
@@ -106,4 +106,4 @@ const Hostel = () =>{
     )
 }
 
-export default Hostel
+export default Mess
